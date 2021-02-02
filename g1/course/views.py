@@ -5,5 +5,3 @@ def learn_django(request):
 
 def learn_python(request):
     return render(request,'coursetwo.html')
-
-
