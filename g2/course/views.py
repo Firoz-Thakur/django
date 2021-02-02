@@ -6,7 +6,8 @@ def learn_django(request):
     cname='Djnago BABA'
     duration='37 years'
     seats='434'
-    details={'x':cname,'y':duration,'z':seats}
+    bol=True
+    details={'a':bol,'x':cname,'y':duration,'z':seats}
     return render(request,'course/course1.html',context=details)
 
 
