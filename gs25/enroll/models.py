@@ -7,7 +7,6 @@ class student(models.Model):
  stumail=models.EmailField(max_length=40)
  stupass=models.IntegerField(max_length=40)
 
-def __str__(self):
+ def __str__(self):
     return str(self.stuid)
 
- 
