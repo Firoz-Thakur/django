@@ -1,6 +1,5 @@
 from django import forms
 
-
 class stuReg(forms.Form):
     name=forms.CharField(label='Your name')  
     email=forms.EmailField(disabled=True)
