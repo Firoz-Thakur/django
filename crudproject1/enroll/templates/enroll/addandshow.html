@@ -11,6 +11,12 @@
       <input type="submit" class ="btn btn-success" value="Add">
 
    </form>
+   {% if messages %}
+    {% for message in messages %}
+     {% comment %} <span class="su"> {{message}}  </span> {% endcomment %}
+     <h5 class="alert alert-info m-3 ">{{message}}</h5>
+     {% endfor %}
+    {% endif %}
  </div>
 
   <div class="col-sm-7 offset-1">

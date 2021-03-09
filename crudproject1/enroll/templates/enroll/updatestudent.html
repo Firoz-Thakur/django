@@ -13,6 +13,11 @@
     <a href="{% url 'addandshow' %}" class="btn btn-info">Back to Home</a>
 
    </form>
+    {% if messages %}
+    {% for message in messages %}
+      <h5 class="alert alert-info m-3 ">{{message}}</h5>
+      {% endfor %}
+    {% endif %}
    
   </div>
 </div>

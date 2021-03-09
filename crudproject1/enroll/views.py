@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponseRedirect
 from .forms import StudentRegistration
 from .models import User
+from django.contrib import messages
 # Create your views here.
 
 #this function will add new item and show all the items
@@ -13,6 +14,7 @@ def add_show(request):
             pw=fm.cleaned_data['password']
             obj=User(name=nm,email=em,password=pw)
             obj.save()
+            messages.success(request,"Data saved successfully !!")
             fm=StudentRegistration()
             
     else:
@@ -32,6 +34,8 @@ def update_data(request,id):
         fm=StudentRegistration(request.POST,instance=pi)
         if fm.is_valid():
             fm.save()
+            messages.success(request,"Data updated successfully !!")
+
     else:
         pi=User.objects.get(pk=id)
         fm=StudentRegistration(instance=pi)
