@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>this is user profile Welcome {{name}}</h1>
+  
+  {% if messages %}
+    
+    {% for message in messages %}
+      {{message}}
+    {% endfor %}
+   {% endif %}
+
+   <form action="" method="POST" novalidate>
+      {% csrf_token %}
+      {% if form.non_field_errors %}
+          {% for error  in form.non_field_errors %}
+              <p>{{error}}</p>
+          {% endfor %}
+       {% endif %}
+      {% for fm  in form  %}
+       
+          {{fm.label_tag}} {{fm}} {{fm.errors | striptags}} <br><br>
+      
+      {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Save baba ji</button>
+   </form>
+
+
+<a href="{% url 'logout' %}"> Logout </a> <br>
+<a href="{% url 'changepass' %}"> change password </a>
+
+</body>
+</html>
