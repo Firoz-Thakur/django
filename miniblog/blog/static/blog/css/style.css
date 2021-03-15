@@ -1,0 +1,21 @@
+body{
+  background-color: rgb(75,74,74);
+  color: antiquewhite;
+}
+
+.jumbo-colo{
+    background-color: rgb(83,81,81);
+}
+
+.cl{
+  text-emphasis-color: black;
+    font-weight: bold;
+}
+
+.sh {
+	background-color: black;
+}
+
+.sh:hover {
+	background-color: blue;
+}
