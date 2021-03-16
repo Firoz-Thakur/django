@@ -70,7 +70,7 @@ def user_login(request):
 def add_post(request):
     if request.user.is_authenticated:
         if request.method=='POST':
-            form=PostForm(request.POST)
+            form=PostForm(request.POST,request.FILES)
             if form.is_valid():
                 form.save()
                 messages.success(request,"Post Added successfully !! ")
